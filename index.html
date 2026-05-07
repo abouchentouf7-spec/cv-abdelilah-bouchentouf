@@ -1,9 +1,15 @@
-<!DOCTYPE html>
+bash
+
+python3 - << 'PYEOF'
+photo_b64 = open('/home/claude/photo_b64.txt').read().strip()
+photo_data_uri = f"data:image/jpeg;base64,{photo_b64}"
+
+html = """<!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Abdelilah BOUCHENTOUF – Business Analyst</title>
+<title>Abdelilah BOUCHENTOUF \u2013 Business Analyst</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap');
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -88,7 +94,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 24px;height:68px;d
 .c3>*{position:relative;z-index:1}
 @keyframes float{0%,100%{transform:translateY(0) rotate3d(1,1,0,2deg)}33%{transform:translateY(-11px) rotate3d(1,-1,0,3deg)}66%{transform:translateY(-5px) rotate3d(-1,1,0,2deg)}}
 .avwrap{position:relative;margin-bottom:6px}
-.av{width:96px;height:96px;border-radius:50%;background:var(--grad1);display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-size:34px;font-weight:800;color:#fff;position:relative;z-index:2}
+.av{width:96px;height:96px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-size:0;font-weight:800;color:transparent;position:relative;z-index:2;overflow:hidden;background-image:url('""" + photo_data_uri + """');background-size:cover;background-position:center top;border:3px solid rgba(99,102,241,0.4)}
 .ar1{position:absolute;inset:-13px;border-radius:50%;border:2px dashed rgba(99,102,241,0.38);animation:spin 8s linear infinite}
 .ar2{position:absolute;inset:-23px;border-radius:50%;border:1px dashed rgba(244,63,94,0.28);animation:spin 12s linear infinite reverse}
 @keyframes spin{to{transform:rotate(360deg)}}
@@ -192,7 +198,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 24px;height:68px;d
 .ripc:nth-child(2){width:152px;height:152px;animation-delay:1s}
 .ripc:nth-child(3){width:194px;height:194px;animation-delay:2s}
 @keyframes rip{0%{opacity:.6;transform:scale(.8)}100%{opacity:0;transform:scale(1.1)}}
-.cav{width:84px;height:84px;border-radius:50%;background:var(--grad1);display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-size:28px;font-weight:800;color:#fff;position:relative;z-index:1}
+.cav{width:84px;height:84px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-size:0;font-weight:800;color:transparent;position:relative;z-index:1;overflow:hidden;background-image:url('""" + photo_data_uri + """');background-size:cover;background-position:center top;border:3px solid rgba(99,102,241,0.5);box-shadow:0 0 20px rgba(79,70,229,0.4)}
 
 /* FOOTER */
 footer{padding:28px 24px;text-align:center;border-top:1px solid var(--border);font-size:12px;color:var(--text3);position:relative;z-index:2}
@@ -222,7 +228,7 @@ section{padding:68px 0}.tl{padding-left:22px}.tldot{left:-30px}
 <div id="loader">
   <div class="l-init">AB</div>
   <div class="l-bar-w"><div class="l-bar"></div></div>
-  <div class="l-txt">Chargement du portfolio…</div>
+  <div class="l-txt">Chargement du portfolio\u2026</div>
 </div>
 
 <canvas id="bgc"></canvas>
@@ -231,8 +237,8 @@ section{padding:68px 0}.tl{padding-left:22px}.tldot{left:-30px}
 <nav>
   <a href="#hero" class="nlogo">Abdelilah B.</a>
   <ul class="nlinks">
-    <li><a href="#skills">Compétences</a></li>
-    <li><a href="#experience">Expérience</a></li>
+    <li><a href="#skills">Comp\u00e9tences</a></li>
+    <li><a href="#experience">Exp\u00e9rience</a></li>
     <li><a href="#projects">Projets</a></li>
     <li><a href="#education">Formation</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -250,20 +256,20 @@ section{padding:68px 0}.tl{padding-left:22px}.tldot{left:-30px}
       <div class="hleft">
         <div class="hbadge"><span class="hdot"></span>Disponible pour missions</div>
         <h1 class="hname">Abdelilah<br>BOUCHENTOUF</h1>
-        <p class="hrole">Consultant <span>Business Analyst</span> · AMOA Senior</p>
-        <p class="hsub">Plus de 20 ans d'expertise en pilotage fonctionnel, recueil des besoins et conduite du changement pour des grands comptes (finance, télécom, accréditation).</p>
+        <p class="hrole">Consultant <span>Business Analyst</span> \u00b7 AMOA Senior</p>
+        <p class="hsub">Plus de 20 ans d\u2019expertise en pilotage fonctionnel, recueil des besoins et conduite du changement pour des grands comptes (finance, t\u00e9l\u00e9com, accr\u00e9ditation).</p>
         <div class="hctas">
-          <a href="#contact" class="btn bp">Me contacter ↗</a>
+          <a href="#contact" class="btn bp">Me contacter \u2197</a>
           <a href="#experience" class="btn bo">Voir mon parcours</a>
         </div>
       </div>
       <div class="hright">
         <div class="c3w"><div class="c3">
-          <div class="avwrap"><div class="av">AB</div><div class="ar1"></div><div class="ar2"></div></div>
+          <div class="avwrap"><div class="av"></div><div class="ar1"></div><div class="ar2"></div></div>
           <div class="cname">Abdelilah BOUCHENTOUF</div>
-          <div class="crole">Business Analyst · AMOA Senior</div>
+          <div class="crole">Business Analyst \u00b7 AMOA Senior</div>
           <div class="cstats">
-            <div class="st"><div class="stnum">20+</div><div class="stlbl">Années</div></div>
+            <div class="st"><div class="stnum">20+</div><div class="stlbl">Ann\u00e9es</div></div>
             <div class="st"><div class="stnum">5+</div><div class="stlbl">Grands comptes</div></div>
             <div class="st"><div class="stnum">8+</div><div class="stlbl">Applications</div></div>
           </div>
@@ -279,10 +285,10 @@ section{padding:68px 0}.tl{padding-left:22px}.tldot{left:-30px}
 <!-- SKILLS -->
 <section id="skills">
   <div class="container">
-    <div class="sh rv"><div class="stag">Expertise</div><h2 class="stitle">Mes <span>Compétences</span></h2><div class="sline"></div></div>
+    <div class="sh rv"><div class="stag">Expertise</div><h2 class="stitle">Mes <span>Comp\u00e9tences</span></h2><div class="sline"></div></div>
     <div class="skgrid">
-      <div><div class="skgt">🎯 Compétences fonctionnelles</div><div id="fsk"></div></div>
-      <div><div class="skgt">🛠️ Compétences techniques</div><div id="tsk"></div></div>
+      <div><div class="skgt">\ud83c\udfaf Comp\u00e9tences fonctionnelles</div><div id="fsk"></div></div>
+      <div><div class="skgt">\ud83d\udee0\ufe0f Comp\u00e9tences techniques</div><div id="tsk"></div></div>
     </div>
     <div class="tchips" id="tchips"></div>
   </div>
@@ -291,7 +297,7 @@ section{padding:68px 0}.tl{padding-left:22px}.tldot{left:-30px}
 <!-- EXPERIENCE -->
 <section id="experience">
   <div class="container">
-    <div class="sh rv"><div class="stag">Parcours</div><h2 class="stitle">Mon <span>Expérience</span></h2><div class="sline"></div></div>
+    <div class="sh rv"><div class="stag">Parcours</div><h2 class="stitle">Mon <span>Exp\u00e9rience</span></h2><div class="sline"></div></div>
     <div class="tl" id="tl"></div>
   </div>
 </section>
@@ -299,7 +305,7 @@ section{padding:68px 0}.tl{padding-left:22px}.tldot{left:-30px}
 <!-- PROJECTS -->
 <section id="projects">
   <div class="container">
-    <div class="sh rv"><div class="stag">Réalisations</div><h2 class="stitle">Applications <span>Clientes</span></h2><div class="sline"></div></div>
+    <div class="sh rv"><div class="stag">R\u00e9alisations</div><h2 class="stitle">Applications <span>Clientes</span></h2><div class="sline"></div></div>
     <div class="pgrid" id="pg"></div>
   </div>
 </section>
@@ -310,10 +316,10 @@ section{padding:68px 0}.tl{padding-left:22px}.tldot{left:-30px}
     <div class="sh rv"><div class="stag">Cursus</div><h2 class="stitle">Formation & <span>Certifications</span></h2><div class="sline"></div></div>
     <div class="egrid" id="eg"></div>
     <div class="lsec rv">
-      <div class="ltit">🌍 Langues</div>
+      <div class="ltit">\ud83c\udf0d Langues</div>
       <div class="lbadges">
-        <div class="lb"><span class="lfl">🇫🇷</span><div><div class="ln">Français</div><div class="ll">Langue maternelle</div></div></div>
-        <div class="lb"><span class="lfl">🇬🇧</span><div><div class="ln">Anglais</div><div class="ll">Lu, écrit, parlé</div></div></div>
+        <div class="lb"><span class="lfl">\ud83c\uddeb\ud83c\uddf7</span><div><div class="ln">Fran\u00e7ais</div><div class="ll">Langue maternelle</div></div></div>
+        <div class="lb"><span class="lfl">\ud83c\uddec\ud83c\udde7</span><div><div class="ln">Anglais</div><div class="ll">Lu, \u00e9crit, parl\u00e9</div></div></div>
       </div>
     </div>
   </div>
@@ -325,16 +331,16 @@ section{padding:68px 0}.tl{padding-left:22px}.tldot{left:-30px}
     <div class="sh rv"><div class="stag">Contact</div><h2 class="stitle">Travaillons <span>Ensemble</span></h2><div class="sline"></div></div>
     <div class="cgrid">
       <div class="ccards rvl">
-        <div class="cc"><div class="cico">📧</div><div class="clbl">Email</div><div class="cval">abdelilah_78@yahoo.fr</div></div>
-        <div class="cc"><div class="cico">📱</div><div class="clbl">Téléphone</div><div class="cval">06-03-33-25-15</div></div>
-        <div class="cc"><div class="cico">📍</div><div class="clbl">Localisation</div><div class="cval">Arnouville 95400 · Île-de-France</div></div>
-        <div class="cc"><div class="cico">✅</div><div class="clbl">Disponibilité</div><div class="cval">Disponible · Permis B</div></div>
+        <div class="cc"><div class="cico">\ud83d\udce7</div><div class="clbl">Email</div><div class="cval">abdelilah_78@yahoo.fr</div></div>
+        <div class="cc"><div class="cico">\ud83d\udcf1</div><div class="clbl">T\u00e9l\u00e9phone</div><div class="cval">06-03-33-25-15</div></div>
+        <div class="cc"><div class="cico">\ud83d\udccd</div><div class="clbl">Localisation</div><div class="cval">Arnouville 95400 \u00b7 \u00cele-de-France</div></div>
+        <div class="cc"><div class="cico">\u2705</div><div class="clbl">Disponibilit\u00e9</div><div class="cval">Disponible \u00b7 Permis B</div></div>
       </div>
       <div class="rvr" style="display:flex;flex-direction:column;align-items:center;gap:22px">
-        <div class="ripw"><div class="ripc"></div><div class="ripc"></div><div class="ripc"></div><div class="cav">AB</div></div>
+        <div class="ripw"><div class="ripc"></div><div class="ripc"></div><div class="ripc"></div><div class="cav"></div></div>
         <div style="text-align:center">
           <div style="font-family:var(--fh);font-size:19px;font-weight:700;color:var(--text)">Abdelilah BOUCHENTOUF</div>
-          <div style="color:var(--text3);font-size:13px;margin-top:4px">Consultant Business Analyst · AMOA Senior</div>
+          <div style="color:var(--text3);font-size:13px;margin-top:4px">Consultant Business Analyst \u00b7 AMOA Senior</div>
         </div>
       </div>
     </div>
@@ -342,30 +348,30 @@ section{padding:68px 0}.tl{padding-left:22px}.tldot{left:-30px}
 </section>
 </main>
 
-<footer><p>© 2026 <span>Abdelilah BOUCHENTOUF</span> — Business Analyst · AMOA Senior</p></footer>
+<footer><p>\u00a9 2026 <span>Abdelilah BOUCHENTOUF</span> \u2014 Business Analyst \u00b7 AMOA Senior</p></footer>
 
 <script>
 // DATA
 const D={
   mq:['COFRAC','BNP Paribas','Orange France','ADP GSI','NATIXIS BANQUE','AS International','ESR Consulting','R&S Consulting','AVATEA','Idianet'],
-  fsk:[{n:'Recueil & analyse des besoins',p:95},{n:'Rédaction specs fonctionnelles',p:92},{n:'Pilotage comités & reporting',p:90},{n:'Gestion tests & recette',p:93},{n:'Support utilisateurs (TMA)',p:88},{n:'Conduite du changement / Formation',p:85},{n:'Gestion incidents & anomalies',p:90},{n:'Méthodes Agile/Scrum',p:87}],
+  fsk:[{n:'Recueil & analyse des besoins',p:95},{n:'R\u00e9daction specs fonctionnelles',p:92},{n:'Pilotage comit\u00e9s & reporting',p:90},{n:'Gestion tests & recette',p:93},{n:'Support utilisateurs (TMA)',p:88},{n:'Conduite du changement / Formation',p:85},{n:'Gestion incidents & anomalies',p:90},{n:'M\u00e9thodes Agile/Scrum',p:87}],
   tsk:[{n:'Oracle DB (11.2+)',p:95},{n:'SQL / SQLServer',p:90},{n:'JIRA / Quality Center',p:88},{n:'Business Object / Reporting',p:82},{n:'Shell / Unix-Linux',p:80},{n:'Power Pivot / Excel',p:85},{n:'ESRI ArcGis',p:72},{n:'Mantis Bug Tracking',p:83}],
   chips:['JIRA','Oracle 11.2','Agile/Scrum','ITIL V3','PMI','Scrum.org PO','Quality Center','Mantis','Business Object','Power Pivot','ESRI ArcGis','SQLServer','MySQL','Sybase','Unix/AIX','Linux','Windows','Weblogic','Tomcat','ITSM','TCL/TK','Shell'],
   xp:[
-    {d:'Mars 2019 – Déc. 2025',co:'COFRAC — DSI (via AS International)',r:'Consultant AMOA Senior',desc:'Accompagnement des utilisateurs en TMA et migration de l\'application PACO (numérisation). Animation de formations, rédaction de spécifications fonctionnelles, recueil des besoins métiers (Inspection, Santé Humaine, Laboratoires, Certification). Cartographie des processus métier.',b:['PACO','GECO','JIRA','Oracle 11.2','Agile Scrum','TMA','Specs fonctionnelles']},
-    {d:'Oct. 2015 – Déc. 2018',co:'BNP Paribas BP2I (via AS International)',r:'Consultant AMOA',desc:'Recueil des besoins pour l\'application Delphes (ticketing). Pilotage backlog et KPI présentés au COMEX chaque lundi. Optimisation du catalogue CRO : réduction de 1165 à 856 éléments sur 3 ans. Animation des comités de pilotage.',b:['Delphes','ITSM','Oracle 11.2','Power Pivot','KPI/COMEX','Agile','CRO']},
-    {d:'Juil. 2014 – Oct. 2015',co:'Orange France — DIRM (via ESR)',r:'Consultant MOA',desc:'Pilotage fonctionnel des applications POPCORN et MIRAGE (cartes couverture réseau France/DOM-TOM/Caraïbes). Coordination de l\'application METEO-VISION (état réseau Orange en quasi-temps réel).',b:['POPCORN','MIRAGE','METEO+','ESRI ArcGis','Oracle','QC 11.2','Business Object']},
-    {d:'Fév. 2008 – Mai 2014',co:'Orange France — DSO (via ESR)',r:'Consultant Fonctionnel',desc:'Validation des offres commerciales Orange (14,5 M clients prépayés, 7 M postpayés) sur SACHEM. Tests de bout en bout, pilotage anomalies niveau 4, formation des équipes EXF, automatisation avec Robot ATS.',b:['SACHEM','Quality Center','Sybase','AIX 6.1','Mantis','SVI','Robot ATS']},
-    {d:'Juin 2007 – Fév. 2008',co:'Orange France — DSO (via R&S Consulting)',r:'Expert Fonctionnel EXF',desc:'Analyse diagnostique des logs de transactions et flux de paiement bancaire. Gestion incidents CRM, rédaction de spécifications fonctionnelles et procès-verbaux de mise en production.',b:['SACHEM CRM','Sybase','QC 9.2','Tuxedo','X25','Prosodie']},
-    {d:'Mars 2006 – Juin 2007',co:'ADP GSI France (via AVATEA)',r:'Ingénieur Intégrateur Systèmes',desc:'Mise en place d\'un Disaster Recovery Plan (DRP) à Barcelone. Reconstruction de l\'infrastructure et remise en route des applications métier en cas de crise majeure. Déploiement Weblogic/Tomcat, monitoring JMX.',b:['DRP','Linux SUSE','Weblogic 8.1','Tomcat','Bladelogic','JMX']},
+    {d:'Mars 2019 \u2013 D\u00e9c. 2025',co:'COFRAC \u2014 DSI (via AS International)',r:'Consultant AMOA Senior',desc:'Accompagnement des utilisateurs en TMA et migration de l\'application PACO (num\u00e9risation). Animation de formations, r\u00e9daction de sp\u00e9cifications fonctionnelles, recueil des besoins m\u00e9tiers (Inspection, Sant\u00e9 Humaine, Laboratoires, Certification). Cartographie des processus m\u00e9tier.',b:['PACO','GECO','JIRA','Oracle 11.2','Agile Scrum','TMA','Specs fonctionnelles']},
+    {d:'Oct. 2015 \u2013 D\u00e9c. 2018',co:'BNP Paribas BP2I (via AS International)',r:'Consultant AMOA',desc:'Recueil des besoins pour l\'application Delphes (ticketing). Pilotage backlog et KPI pr\u00e9sent\u00e9s au COMEX chaque lundi. Optimisation du catalogue CRO\u00a0: r\u00e9duction de 1165 \u00e0 856 \u00e9l\u00e9ments sur 3 ans. Animation des comit\u00e9s de pilotage.',b:['Delphes','ITSM','Oracle 11.2','Power Pivot','KPI/COMEX','Agile','CRO']},
+    {d:'Juil. 2014 \u2013 Oct. 2015',co:'Orange France \u2014 DIRM (via ESR)',r:'Consultant MOA',desc:'Pilotage fonctionnel des applications POPCORN et MIRAGE (cartes couverture r\u00e9seau France/DOM-TOM/Cara\u00efbes). Coordination de l\'application METEO-VISION (\u00e9tat r\u00e9seau Orange en quasi-temps r\u00e9el).',b:['POPCORN','MIRAGE','METEO+','ESRI ArcGis','Oracle','QC 11.2','Business Object']},
+    {d:'F\u00e9v. 2008 \u2013 Mai 2014',co:'Orange France \u2014 DSO (via ESR)',r:'Consultant Fonctionnel',desc:'Validation des offres commerciales Orange (14,5\u00a0M clients pr\u00e9pay\u00e9s, 7\u00a0M postpay\u00e9s) sur SACHEM. Tests de bout en bout, pilotage anomalies niveau 4, formation des \u00e9quipes EXF, automatisation avec Robot ATS.',b:['SACHEM','Quality Center','Sybase','AIX 6.1','Mantis','SVI','Robot ATS']},
+    {d:'Juin 2007 \u2013 F\u00e9v. 2008',co:'Orange France \u2014 DSO (via R&S Consulting)',r:'Expert Fonctionnel EXF',desc:'Analyse diagnostique des logs de transactions et flux de paiement bancaire. Gestion incidents CRM, r\u00e9daction de sp\u00e9cifications fonctionnelles et proc\u00e8s-verbaux de mise en production.',b:['SACHEM CRM','Sybase','QC 9.2','Tuxedo','X25','Prosodie']},
+    {d:'Mars 2006 \u2013 Juin 2007',co:'ADP GSI France (via AVATEA)',r:'Ing\u00e9nieur Int\u00e9grateur Syst\u00e8mes',desc:'Mise en place d\'un Disaster Recovery Plan (DRP) \u00e0 Barcelone. Reconstruction de l\'infrastructure et remise en route des applications m\u00e9tier en cas de crise majeure. D\u00e9ploiement Weblogic/Tomcat, monitoring JMX.',b:['DRP','Linux SUSE','Weblogic 8.1','Tomcat','Bladelogic','JMX']},
   ],
   proj:[
-    {i:'🏛️',n:'PACO',cl:'COFRAC DSI',desc:'Processus d\'Accréditation COFRAC — délivrance d\'accréditations aux organismes d\'inspection, de certification et de laboratoires. Migration & numérisation complète du SI.',s:['JIRA','Oracle 11.2','Agile Scrum','Specs fonctionnelles']},
-    {i:'🔄',n:'GECO',cl:'COFRAC DSI',desc:'Gestion des Évaluateurs COFRAC — validation de la recette fonctionnelle, support utilisateurs en production, consolidation des demandes de maintenance corrective.',s:['JIRA','Oracle 11.2','Agile Scrum','TMA']},
-    {i:'🎫',n:'DELPHES',cl:'BNP Paribas BP2I',desc:'Outil de ticketing pour la gestion des incidents et projets applicatifs sur le réseau BNP Paribas (France, Belgique, Italie). Reporting KPI au COMEX.',s:['ITSM','Oracle','Power Pivot','KPI']},
-    {i:'🗺️',n:'POPCORN / MIRAGE',cl:'Orange DIRM',desc:'Applications de cartes de couverture des réseaux mobile et fixe (ADSL, Fibre, Wifi) — France métropolitaine, Caraïbes et DOM-TOM.',s:['ESRI ArcGis','Oracle','QC 11.2','Mantis']},
-    {i:'🌩️',n:'METEO VISION',cl:'Orange DIRM',desc:'Application d\'information en quasi-temps réel sur les pannes du réseau Orange France et Outre-mer, à destination des conseillers et superviseurs.',s:['Business Object','Oracle','BRISE BO']},
-    {i:'📱',n:'SACHEM',cl:'Orange DSO',desc:'CRM de gestion des comptes prépayés et MVNO (14,5 M clients). Validation des offres (M6 Mobile, Virgin Mobile, Sosh) avec tests de bout en bout.',s:['Sybase 15','AIX 6.1','QC 9.2','Robot ATS']},
+    {i:'\ud83c\udfd9\ufe0f',n:'PACO',cl:'COFRAC DSI',desc:'Processus d\'Accr\u00e9ditation COFRAC \u2014 d\u00e9livrance d\'accr\u00e9ditations aux organismes d\'inspection, de certification et de laboratoires. Migration & num\u00e9risation compl\u00e8te du SI.',s:['JIRA','Oracle 11.2','Agile Scrum','Specs fonctionnelles']},
+    {i:'\ud83d\udd04',n:'GECO',cl:'COFRAC DSI',desc:'Gestion des \u00c9valuateurs COFRAC \u2014 validation de la recette fonctionnelle, support utilisateurs en production, consolidation des demandes de maintenance corrective.',s:['JIRA','Oracle 11.2','Agile Scrum','TMA']},
+    {i:'\ud83c\udfab',n:'DELPHES',cl:'BNP Paribas BP2I',desc:'Outil de ticketing pour la gestion des incidents et projets applicatifs sur le r\u00e9seau BNP Paribas (France, Belgique, Italie). Reporting KPI au COMEX.',s:['ITSM','Oracle','Power Pivot','KPI']},
+    {i:'\ud83d\uddfa\ufe0f',n:'POPCORN / MIRAGE',cl:'Orange DIRM',desc:'Applications de cartes de couverture des r\u00e9seaux mobile et fixe (ADSL, Fibre, Wifi) \u2014 France m\u00e9tropolitaine, Cara\u00efbes et DOM-TOM.',s:['ESRI ArcGis','Oracle','QC 11.2','Mantis']},
+    {i:'\ud83c\udf29\ufe0f',n:'METEO VISION',cl:'Orange DIRM',desc:'Application d\'information en quasi-temps r\u00e9el sur les pannes du r\u00e9seau Orange France et Outre-mer, \u00e0 destination des conseillers et superviseurs.',s:['Business Object','Oracle','BRISE BO']},
+    {i:'\ud83d\udcf1',n:'SACHEM',cl:'Orange DSO',desc:'CRM de gestion des comptes pr\u00e9pay\u00e9s et MVNO (14,5\u00a0M clients). Validation des offres (M6 Mobile, Virgin Mobile, Sosh) avec tests de bout en bout.',s:['Sybase 15','AIX 6.1','QC 9.2','Robot ATS']},
   ],
   edu:[
     {y:'2023',t:'Certification SCRUM Product Owner',o:'Scrum.org'},
@@ -374,9 +380,9 @@ const D={
     {y:'2014',t:'Formation ESRI ArcGis WebAdaptor',o:'ESRI France'},
     {y:'2012',t:'Formation PMI Management de Projets',o:'Orsys'},
     {y:'2008',t:'Formation Tuxedo BEA',o:'BULL'},
-    {y:'2004',t:'Certificat Administrateur Système & Réseau',o:'CNAM'},
-    {y:'2003',t:'Licence Mathématiques & Informatique',o:'Option transversal'},
-    {y:'2001',t:'DEUG MIASS',o:'Mathématiques & Informatique appliquées'},
+    {y:'2004',t:'Certificat Administrateur Syst\u00e8me & R\u00e9seau',o:'CNAM'},
+    {y:'2003',t:'Licence Math\u00e9matiques & Informatique',o:'Option transversal'},
+    {y:'2001',t:'DEUG MIASS',o:'Math\u00e9matiques & Informatique appliqu\u00e9es'},
   ]
 };
 
@@ -466,4 +472,11 @@ document.querySelectorAll('.nlinks a').forEach(a=>a.addEventListener('click',()=
 }));
 </script>
 </body>
-</html>
+</html>"""
+
+with open('/mnt/user-data/outputs/portfolio_abdelilah.html', 'w', encoding='utf-8') as f:
+    f.write(html)
+
+print("File written successfully")
+print("Size:", len(html), "bytes")
+PYEOF
