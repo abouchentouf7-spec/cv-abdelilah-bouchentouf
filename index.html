@@ -194,6 +194,18 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 24px;height:68px;d
 @keyframes rip{0%{opacity:.6;transform:scale(.8)}100%{opacity:0;transform:scale(1.1)}}
 .cav{width:84px;height:84px;border-radius:50%;background:var(--grad1);display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-size:28px;font-weight:800;color:#fff;position:relative;z-index:1}
 
+/* PHOTO CORRECTION */
+.contact-photo{
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(255,255,255,0.15);
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 0 25px rgba(99,102,241,0.45);
+}
+
 /* FOOTER */
 footer{padding:28px 24px;text-align:center;border-top:1px solid var(--border);font-size:12px;color:var(--text3);position:relative;z-index:2}
 footer span{background:var(--grad1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:600}
@@ -218,7 +230,6 @@ section{padding:68px 0}.tl{padding-left:22px}.tldot{left:-30px}
 <body>
 <div id="cd"></div><div id="cr"></div>
 
-<!-- LOADER -->
 <div id="loader">
   <div class="l-init">AB</div>
   <div class="l-bar-w"><div class="l-bar"></div></div>
@@ -227,7 +238,6 @@ section{padding:68px 0}.tl{padding-left:22px}.tldot{left:-30px}
 
 <canvas id="bgc"></canvas>
 
-<!-- NAV -->
 <nav>
   <a href="#hero" class="nlogo">Abdelilah B.</a>
   <ul class="nlinks">
@@ -242,7 +252,6 @@ section{padding:68px 0}.tl{padding-left:22px}.tldot{left:-30px}
 
 <main>
 
-<!-- HERO -->
 <section id="hero">
   <div class="orb o1"></div><div class="orb o2"></div>
   <div class="container">
@@ -273,10 +282,8 @@ section{padding:68px 0}.tl{padding-left:22px}.tldot{left:-30px}
   </div>
 </section>
 
-<!-- MARQUEE -->
 <div class="mqs"><div class="mqt" id="mq"></div></div>
 
-<!-- SKILLS -->
 <section id="skills">
   <div class="container">
     <div class="sh rv"><div class="stag">Expertise</div><h2 class="stitle">Mes <span>Compétences</span></h2><div class="sline"></div></div>
@@ -288,7 +295,6 @@ section{padding:68px 0}.tl{padding-left:22px}.tldot{left:-30px}
   </div>
 </section>
 
-<!-- EXPERIENCE -->
 <section id="experience">
   <div class="container">
     <div class="sh rv"><div class="stag">Parcours</div><h2 class="stitle">Mon <span>Expérience</span></h2><div class="sline"></div></div>
@@ -296,7 +302,6 @@ section{padding:68px 0}.tl{padding-left:22px}.tldot{left:-30px}
   </div>
 </section>
 
-<!-- PROJECTS -->
 <section id="projects">
   <div class="container">
     <div class="sh rv"><div class="stag">Réalisations</div><h2 class="stitle">Applications <span>Clientes</span></h2><div class="sline"></div></div>
@@ -304,7 +309,6 @@ section{padding:68px 0}.tl{padding-left:22px}.tldot{left:-30px}
   </div>
 </section>
 
-<!-- EDUCATION -->
 <section id="education">
   <div class="container">
     <div class="sh rv"><div class="stag">Cursus</div><h2 class="stitle">Formation & <span>Certifications</span></h2><div class="sline"></div></div>
@@ -319,7 +323,6 @@ section{padding:68px 0}.tl{padding-left:22px}.tldot{left:-30px}
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
   <div class="container">
     <div class="sh rv"><div class="stag">Contact</div><h2 class="stitle">Travaillons <span>Ensemble</span></h2><div class="sline"></div></div>
@@ -331,21 +334,10 @@ section{padding:68px 0}.tl{padding-left:22px}.tldot{left:-30px}
         <div class="cc"><div class="cico">✅</div><div class="clbl">Disponibilité</div><div class="cval">Disponible · Permis B</div></div>
       </div>
       <div class="rvr" style="display:flex;flex-direction:column;align-items:center;gap:22px">
-        <div class="ripw"><div class="ripc"></div><div class="ripc"></div><div class="ripc"></div><img 
-    src="photo.png" 
-    alt="Abdelilah BOUCHENTOUF"
-    class="contact-photo"
-                                                                                                    .contact-photo{
-    width:84px;
-    height:84px;
-    border-radius:50%;
-    object-fit:cover;
-    border:3px solid rgba(255,255,255,0.15);
-    position:relative;
-    z-index:1;
-    box-shadow:0 0 25px rgba(99,102,241,0.45);
-}
-></div>
+        <div class="ripw">
+          <div class="ripc"></div><div class="ripc"></div><div class="ripc"></div>
+          <img src="photo.png" alt="Abdelilah BOUCHENTOUF" class="contact-photo">
+        </div>
         <div style="text-align:center">
           <div style="font-family:var(--fh);font-size:19px;font-weight:700;color:var(--text)">Abdelilah BOUCHENTOUF</div>
           <div style="color:var(--text3);font-size:13px;margin-top:4px">Consultant Business Analyst · AMOA Senior</div>
@@ -435,49 +427,73 @@ document.querySelectorAll('a,button,.chip,.cc,.btn').forEach(el=>{
 // SKILLS RENDER
 const mkSk=(arr,id)=>{document.getElementById(id).innerHTML=arr.map(s=>`<div class="ski rv"><div class="skh"><span class="skn">${s.n}</span><span class="skp">${s.p}%</span></div><div class="sbbg"><div class="sb" data-p="${s.p}"></div></div></div>`).join('')};
 mkSk(D.fsk,'fsk');mkSk(D.tsk,'tsk');
+
+// TCHIPS & OTHER RENDERS
 document.getElementById('tchips').innerHTML=D.chips.map(c=>`<div class="chip">${c}</div>`).join('');
 
-// TIMELINE
-document.getElementById('tl').innerHTML=D.xp.map(e=>`<div class="tli rv"><div class="tldot"></div><div class="tldate">${e.d}</div><div class="tlrole">${e.r}</div><div class="tlco">${e.co}</div><div class="tldesc">${e.desc}</div><div class="tlbadges">${e.b.map(b=>`<span class="bt">${b}</span>`).join('')}</div></div>`).join('');
+// TIMELINE RENDER
+document.getElementById('tl').innerHTML=D.xp.map(x=>`
+  <div class="tli rv">
+    <div class="tldot"></div>
+    <div class="tldate">${x.d}</div>
+    <div class="tlrole">${x.r}</div>
+    <div class="tlco">${x.co}</div>
+    <div class="tldesc">${x.desc}</div>
+    <div class="tlbadges">${x.b.map(badge=>`<span class="bt">${badge}</span>`).join('')}</div>
+  </div>
+`).join('');
 
-// PROJECTS
-document.getElementById('pg').innerHTML=D.proj.map(p=>`<div class="pc rv"><div class="pico">${p.i}</div><div class="pname">${p.n}</div><div class="pcli">${p.cl}</div><div class="pdesc">${p.desc}</div><div class="pstack">${p.s.map(s=>`<span class="stk">${s}</span>`).join('')}</div></div>`).join('');
+// PROJECTS RENDER
+document.getElementById('pg').innerHTML=D.proj.map(p=>`
+  <div class="pc rv">
+    <div class="pico">${p.i}</div>
+    <div class="pname">${p.n}</div>
+    <div class="pcli">${p.cl}</div>
+    <div class="pdesc">${p.desc}</div>
+    <div class="pstack">${p.s.map(stk=>`<span class="stk">${stk}</span>`).join('')}</div>
+  </div>
+`).join('');
 
-// EDUCATION
-document.getElementById('eg').innerHTML=D.edu.map(e=>`<div class="ec rv"><div class="eyr">${e.y}</div><div class="etit">${e.t}</div>${e.o?`<div class="eorg">${e.o}</div>`:''}</div>`).join('');
+// EDUCATION RENDER
+document.getElementById('eg').innerHTML=D.edu.map(e=>`
+  <div class="ec rv">
+    <div class="eyr">${e.y}</div>
+    <div class="etit">${e.t}</div>
+    <div class="eorg">${e.o}</div>
+  </div>
+`).join('');
 
-// INTERSECTION OBSERVER
-const obs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){
-      e.target.classList.add('on');
-      const sb=e.target.querySelector?.('.sb');
-      if(sb){const p=sb.dataset.p;setTimeout(()=>{sb.style.width=p+'%';setTimeout(()=>sb.classList.add('done'),p*12)},120)}
-      obs.unobserve(e.target);
+// SCROLL ANIMATION TRIGGER
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) {
+      entry.target.classList.add('on');
+      // Trigger skill bar animation if it's a skill
+      const sbs = entry.target.querySelectorAll('.sb');
+      sbs.forEach(sb => {
+        sb.style.width = sb.getAttribute('data-p') + '%';
+        sb.classList.add('done');
+      });
     }
   });
-},{threshold:.12,rootMargin:'0px 0px -32px 0px'});
+}, {threshold: 0.1});
 
-document.querySelectorAll('.rv,.rvl,.rvr,.ski').forEach((el,i)=>{
-  const par=el.parentElement;
-  const idx=[...par.children].indexOf(el);
-  el.style.transitionDelay=idx*.08+'s';
-  obs.observe(el);
-});
+document.querySelectorAll('.rv, .rvl, .rvr').forEach(el => observer.observe(el));
 
 // MOBILE NAV
-document.getElementById('nmob').addEventListener('click',function(){
-  const nl=document.querySelector('.nlinks');
-  const open=this.dataset.open==='1';
-  this.dataset.open=open?'0':'1';
-  nl.style.cssText=open?'':`display:flex;flex-direction:column;position:absolute;top:68px;left:0;right:0;background:rgba(8,11,20,.96);backdrop-filter:blur(20px);padding:20px 24px;gap:18px;border-bottom:1px solid rgba(255,255,255,.07)`;
-  const s=this.querySelectorAll('span');
-  if(!open){s[0].style.transform='translateY(7px) rotate(45deg)';s[1].style.opacity='0';s[2].style.transform='translateY(-7px) rotate(-45deg)'}
-  else{s[0].style.transform='';s[1].style.opacity='';s[2].style.transform=''}
+const nmob = document.getElementById('nmob');
+const nlinks = document.querySelector('.nlinks');
+nmob.addEventListener('click', () => {
+  nlinks.style.display = nlinks.style.display === 'flex' ? 'none' : 'flex';
+  nlinks.style.flexDirection = 'column';
+  nlinks.style.position = 'absolute';
+  nlinks.style.top = '68px';
+  nlinks.style.left = '0';
+  nlinks.style.right = '0';
+  nlinks.style.background = 'var(--bg2)';
+  nlinks.style.padding = '20px';
+  nlinks.style.borderBottom = '1px solid var(--border)';
 });
-document.querySelectorAll('.nlinks a').forEach(a=>a.addEventListener('click',()=>{
-  if(innerWidth<=600){document.querySelector('.nlinks').style.display='none';const nb=document.getElementById('nmob');nb.dataset.open='0';nb.querySelectorAll('span').forEach(s=>{s.style.transform='';s.style.opacity=''})}
-}));
 </script>
 </body>
 </html>
